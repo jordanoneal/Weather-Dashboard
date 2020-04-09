@@ -5,8 +5,15 @@ $("#saveBtn").on("click", function(event) {
     event.preventDefault()
     var city = $("#city-input").val()
     console.log(city)
+    var cityList = $("#cities-list")
 
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + APIKey
+
+    var listItem = $("<li>");
+    listItem.text(city);
+    listItem.addClass("list-group-item");
+    cityList.append(listItem)
+
 
 $.ajax({
     url: queryURL,
@@ -83,6 +90,12 @@ $.ajax({
 
             //set index text
             $("#index").text("UV Index: " + forecast.current.uvi)
+
+            let $listItem = $("<li>");
+            $listItem.text($("#cityInput").val());
+            $listItem.addClass("list-group-item");
+            $listItem.attr("data-search", $("#cityInput").val())
+            $("#citiesList").append($listItem);
 
         }
 
