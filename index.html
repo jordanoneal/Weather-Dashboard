@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" id="weatherDashboard" href="#!">Weather Dashboard</a>
+
+    </nav>
+
+    <div class="row">
+        <div class="col-md-3">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">
+                        <h2>Search for a city:</h2>
+                        <button type="button" class="btn btn-info" id="saveBtn">Search</button>
+                    </label>
+                    <input type="text" class="form-control" id="city-input" placeholder="Example input">
+                </div>
+            </form>
+
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <h2 id="city"></h2>
+                    <p id="temp"></p>
+                    <p id="humid"></p>
+                    <p id="wind"></p>
+                    <p id="index"></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group" id="cities-list">
+                <li class="list-group-item">Stored city 1</li>
+                <li class="list-group-item">Stored city 2</li>
+                <li class="list-group-item">Stored city 3</li>
+            </ul>
+        </div>
+
+    </div>
+    <h2>5-Day Forecast:</h2>
+    <div class="row" id="forecastDiv"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
