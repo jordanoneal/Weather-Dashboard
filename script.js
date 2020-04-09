@@ -1,7 +1,12 @@
 //API Key
 var APIKey = "&appid=d67d379f19decbcad97f1f7549ca59f8"
-var city = "Salt Lake City"
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + APIKey
+
+$("#saveBtn").on("click", function(event) {
+    event.preventDefault()
+    var city = $("#city-input").val()
+    console.log(city)
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + APIKey
 
 $.ajax({
     url: queryURL,
@@ -81,12 +86,16 @@ $.ajax({
 
         }
 
-    })
+    }) 
+
+    renderButtons();
 
 })
 
-$("#saveBtn").on("click", function(event) {
-    event.preventDefault()
-    var search = $("#city-input").val().trim();
-    console.log(search)
 })
+
+function renderButtons() {
+    $("#forecastDiv").empty();
+}
+
+
