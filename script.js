@@ -1,7 +1,7 @@
 let searchBtn = $("#search-button");
 
 searchBtn.on("click", function () {
-  let searchTerm = $("#search-value").val();
+  let searchTerm = $("#search-value").val().trim();
 
   $("#search-value").val("");
 
@@ -21,7 +21,7 @@ function makeRow(text) {
 
 function searchWeather(searchValue) {
   let APIKey = "d67d379f19decbcad97f1f7549ca59f8";
-  let queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${APIKey}`;
+  let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${APIKey}`;
 
   $.ajax({
     url: queryURL,
@@ -53,7 +53,7 @@ function searchWeather(searchValue) {
     let lon = response.coord.lon;
     let img = $("<img>").attr(
       "src",
-      "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+      "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
     );
 
     // add to weather-dashboard
@@ -93,7 +93,7 @@ function searchWeather(searchValue) {
           .text("Humidity: " + forecast.humidity + "%");
         let forecastIcon = $("<img>").attr(
           "src",
-          "http://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png"
+          "https://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png"
         );
 
         var col = $("<div>").addClass("col-md-2");
